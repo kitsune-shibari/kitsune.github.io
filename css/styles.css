@@ -1498,3 +1498,8 @@ a {
 .lang-current[data-lang="pt"] { background: linear-gradient(135deg, #009739 50%, #FEDD00 50%); color: #000; }
 .lang-current[data-lang="ja"] { background: #BC002D; color: #fff; }
 .lang-current[data-lang="zh"] { background: #DE2910; color: #fff; }
+
+.bio-section.bio-intro {
+    display: flex !important;
+    flex-direction: row !important;
+}
