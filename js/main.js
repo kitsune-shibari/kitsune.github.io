@@ -51,19 +51,6 @@ if (menuBtn && drawer && overlay) {
 }
 
 // ==========================================
-// CARRUSEL DEL HERO
-// ==========================================
-const slides = document.querySelectorAll('.hero-slide');
-if (slides.length > 0) {
-    let currentSlide = 0;
-    setInterval(() => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }, 5000);
-}
-
-// ==========================================
 // SMOOTH SCROLL
 // ==========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -194,10 +181,10 @@ if (modal) {
     });
 // Hero Carousel
 document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.hero-slide');
+    var slides = document.querySelectorAll('.hero-slide');
     let currentSlide = 0;
-    const totalSlides = slides.length;
-    const intervalTime = 5000; // Cambia cada 5 segundos
+    var totalSlides = slides.length;
+    var intervalTime = 5000; // Cambia cada 5 segundos
     
     function nextSlide() {
         slides[currentSlide].classList.remove('active');
