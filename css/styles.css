@@ -1439,52 +1439,61 @@ a {
     color: var(--color-texto);
 }
 /* ============================================
-   BIO - IMAGEN FLOTANTE
+   BIO - IMAGEN A LA IZQUIERDA, TEXTO A LA DERECHA
    ============================================ */
 
 .bio-intro {
-    display: flex;
-    gap: var(--space-lg);
-    align-items: flex-start;
+    display: flex !important; /* Forzamos flex */
+    flex-direction: row !important; /* Horizontal */
+    gap: 3rem;
+    align-items: flex-start; /* Alineados arriba */
+    justify-content: flex-start; /* Todo a la izquierda */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 
 .bio-image-container {
-    flex-shrink: 0;
+    flex-shrink: 0; /* No se encoge */
+    width: 280px;
+    height: 350px;
 }
 
 .bio-portrait {
-    width: 280px;
-    height: 350px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
 }
 
 .bio-text-content {
-    flex: 1;
+    flex: 1; /* Ocupa el resto del espacio */
+    text-align: left; /* Texto alineado a la izquierda */
 }
 
 .bio-text-content h2 {
     margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: left;
 }
 
-/* MOBILE: imagen arriba, texto abajo */
+/* MOBILE: apilados */
 @media (max-width: 768px) {
     .bio-intro {
-        flex-direction: column;
-        gap: var(--space-md);
+        flex-direction: column !important;
+        align-items: center;
+        gap: 2rem;
     }
     
     .bio-image-container {
-        width: 100%;
-        text-align: center;
+        width: 280px;
+        height: 350px;
     }
     
-    .bio-portrait {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-        aspect-ratio: 4 / 5;
+    .bio-text-content {
+        text-align: center;
     }
     
     .bio-text-content h2 {
