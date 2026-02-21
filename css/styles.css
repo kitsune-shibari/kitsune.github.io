@@ -211,7 +211,6 @@ a {
     transition: opacity 1.5s ease-in-out;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 }
 
 .hero-slide.active {
