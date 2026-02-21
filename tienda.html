@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title data-i18n="tienda.meta.title">Tienda | KITSUNE</title>
+    <link rel="stylesheet" href="css/styles.css">
+        <!-- CHARSET Y VIEWPORT (ya los tenés) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO BÁSICO -->
+<meta name="description" content="Instructora de Shibari, fotógrafa y creadora de espacios. Clases, sesiones privadas, producciones y comunidad.">
+<meta name="keywords" content="shibari, kinbaku, cuerdas, clases, talleres, fotografía, performances, Argentina">
+<meta name="author" content="KITSUNE">
+<meta name="robots" content="index, follow">
+
+<!-- CANONICAL (evitar contenido duplicado) -->
+<link rel="canonical" href="https://kitsune.net/">
+
+<!-- OPEN GRAPH (Facebook, WhatsApp, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kitsune.net/">
+<meta property="og:title" content="KITSUNE | Disciplina · Movimiento · Comunidad">
+<meta property="og:description" content="Instructora de Shibari, fotógrafa y creadora de espacios.">
+<meta property="og:image" content="https://kitsune.net/img/og-image.jpg">
+<meta property="og:locale" content="es_AR">
+
+<!-- TWITTER CARDS -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KITSUNE">
+<meta name="twitter:description" content="Instructora de Shibari, fotógrafa y creadora de espacios.">
+<meta name="twitter:image" content="https://kitsune.net/img/og-image.jpg">
+
+<!-- FAVICON (ya lo tenés) -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">KITSUNE</a>
+        
+        <div class="lang-switcher">
+            <div class="lang-current">
+                <span class="lang-flag">🇦🇷</span>
+            </div>
+            <div class="lang-dropdown">
+                <div class="lang-option" data-lang="es"><span class="lang-flag">🇦🇷</span><span>ES</span></div>
+                <div class="lang-option" data-lang="en"><span class="lang-flag">🇬🇧</span><span>EN</span></div>
+                <div class="lang-option" data-lang="pt"><span class="lang-flag">🇧🇷</span><span>PT</span></div>
+                <div class="lang-option" data-lang="ja"><span class="lang-flag">🇯🇵</span><span>日本語</span></div>
+                <div class="lang-option" data-lang="zh"><span class="lang-flag">🇨🇳</span><span>中文</span></div>
+            </div>
+        </div>
+
+        <button class="menu-toggle" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="drawer-overlay" id="overlay"></div>
+    
+    <nav class="drawer" id="drawer" aria-hidden="true">
+        <ul class="drawer-nav">
+            <li><a href="index.html#caminos" data-i18n="nav.caminos">Caminos</a></li>
+            <li><a href="agenda.html" data-i18n="nav.agenda">Agenda</a></li>
+            <li><a href="galeria.html" data-i18n="nav.galeria">Galería</a></li>
+            <li><a href="tienda.html" data-i18n="nav.tienda">Tienda</a></li>
+            <li><a href="bio.html" data-i18n="nav.bio">Bio</a></li>
+            <li><a href="contacto.html" data-i18n="nav.contacto">Contacto</a></li>
+            <li><a href="https://www.patreon.com/cw/KitsuneProducciones" target="_blank" rel="noopener" data-i18n="nav.patreon">Patreon →</a></li>
+        </ul>
+    </nav>
+
+    <main class="shop-page">
+        <h1 class="shop-title" data-i18n="tienda.title">Tienda</h1>
+        <p class="shop-subtitle" data-i18n="tienda.subtitle">Todo lo que necesitás para tu práctica y mucho más</p>
+
+        <div class="shop-grid">
+            
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://i.etsystatic.com/16296851/r/il/b57d63/2154840110/il_fullxfull.2154840110_5ckw.jpg')"></div>
+                <div class="product-info">
+                    <h3 class="product-name" data-i18n="tienda.productos.0.nombre">Cuerda de Yute</h3>
+                    <p class="product-desc" data-i18n="tienda.productos.0.desc">Cuerda de fibras naturales de 8 metro de longitud x 6mm de espesor. Ideal tanto para atar en piso como suspensiones. Envíos dentro de Argentina</p>
+                    <span class="product-price" data-i18n="tienda.productos.0.precio">$30.000 ARS</span>
+                    <a href="https://mercadoshops.com/link-publicacion" class="product-link" target="_blank" rel="noopener" data-i18n="tienda.ver_publicacion">Ver publicación →</a>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image" style="background-image: url('https://m.media-amazon.com/images/I/51wDzNrjHLL._SY466_.jpg')"></div>
+                <div class="product-info">
+                    <h3 class="product-name" data-i18n="tienda.productos.1.nombre">Libro "El cuerpo como mapa" por Kitsune, Ed. 2025 (Español)</h3>
+                    <p class="product-desc" data-i18n="tienda.productos.1.desc">La cosmovisión andina explicando al shibari como herramienta de autoconocimiento. Envíos a todo el mundo</p>
+                    <span class="product-price" data-i18n="tienda.productos.1.precio">$19.99 USD</span>
+                    <a href="https://www.amazon.com/-/es/cuerpo-como-mapa-cosmovisi%C3%B3n-autoconocimiento/dp/B0FYDLS61L" class="product-link" target="_blank" rel="noopener" data-i18n="tienda.ver_publicacion">Ver publicación →</a>
+                </div>
+            </article>
+
+        </div>
+
+    </main>
+
+    <section class="contact" id="contacto">
+        <h2 data-i18n="contacto.title">Contacto</h2>
+        <div class="social-grid">
+            <a href="https://instagram.com/kink.tsune" class="social-link" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.patreon.com/cw/KitsuneProducciones" class="social-link" target="_blank" rel="noopener">Patreon</a>
+            <a href="https://discord.com" class="social-link" target="_blank" rel="noopener">Discord</a>
+            <a href="https://t.me/cba1919" class="social-link" target="_blank" rel="noopener">Telegram</a>
+            <a href="mailto:info@kitsune.net" class="social-link">Email</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p data-i18n="footer.copyright">&copy; 2026 KITSUNE. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html>

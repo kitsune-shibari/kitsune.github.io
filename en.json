@@ -1,0 +1,66 @@
+{
+    "nav": {
+        "caminos": "Paths",
+        "agenda": "Schedule",
+        "galeria": "Gallery",
+        "tienda": "Shop",
+        "bio": "Bio",
+        "contacto": "Contact",
+        "patreon": "Patreon →"
+    },
+    "hero": {
+        "title": "KITSUNE",
+        "subtitle": "Discipline · Movement · Community"
+    },
+    "about": {
+        "title": "About",
+        "text": "Shibari instructor. Photographer. I create spaces for body exploration, safety, and art.",
+        "link": "Learn more about my work →"
+    },
+    "cards": {
+        "clases": {
+            "title": "Classes",
+            "desc": "Shibari from the fundamentals. Exclusive content, Discord community, film debates, mentorships."
+        },
+        "galeria": {
+            "title": "Gallery",
+            "desc": "Private sessions, performances, photographic productions. Artistic and documentary work."
+        },
+        "tienda": {
+            "title": "Shop",
+            "desc": "Treated Shibari ropes, beginner kits, accessories and selected materials."
+        }
+    },
+    "caminos": {
+        "title": "Learning Paths",
+        "subtitle": "If Life is a school, why not learn everything from psychomagic to science, from the unconscious to manifestation. Here we break the limits of the known so you can recover ancient memory. Drop expectations, flow with your heart's intuition, and get ready.",
+        "samurai": {
+            "title": "The Way of the Samurai",
+            "fundamentals": ["discipline", "technique", "precision"],
+            "desc": "Perfect for those who want to join a discipline that allows you to play at being the samurai you always wanted to be while learning a new manual skill, sharing with your partner, and learning history and mythical legends!",
+            "cta": "What are you waiting for?",
+            "button": "More info"
+        },
+        "serpiente": {
+            "title": "The Way of the Serpent",
+            "fundamentals": ["interpretation", "somatic education", "biomechanics"],
+            "desc": "Perfect for those coming from the arts who see dance, painting, or an experience in what happens between my ropes. Tools adapted to understand technique and discipline from a more flexible approach.",
+            "cta": "What are you waiting for?",
+            "button": "More info"
+        },
+        "suspension": {
+            "title": "I Suspend Alone!",
+            "fundamentals": ["proprioception", "balance", "strength"],
+            "desc": "Workshop for rope bottoms where we teach proprioception, support points, and balance in air and floor. Improve your muscle tone and presence in session. It makes us feel like the Goddesses we are as we see advances in our body knowledge.",
+            "cta": "What are you waiting for?",
+            "button": "More info"
+        }
+    },
+    "contacto": {
+        "title": "Connect",
+        "follow": "Follow"
+    },
+    "footer": {
+        "copyright": "© 2026 KITSUNE. All rights reserved."
+    }
+}

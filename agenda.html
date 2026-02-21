@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- CHARSET Y VIEWPORT (ya los tenés) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO BÁSICO -->
+<meta name="description" content="Instructora de Shibari, fotógrafa y creadora de espacios. Clases, sesiones privadas, producciones y comunidad.">
+<meta name="keywords" content="shibari, kinbaku, cuerdas, clases, talleres, fotografía, performances, Argentina">
+<meta name="author" content="KITSUNE">
+<meta name="robots" content="index, follow">
+
+<!-- CANONICAL (evitar contenido duplicado) -->
+<link rel="canonical" href="https://kitsune.net/">
+
+<!-- OPEN GRAPH (Facebook, WhatsApp, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kitsune.net/">
+<meta property="og:title" content="KITSUNE | Disciplina · Movimiento · Comunidad">
+<meta property="og:description" content="Instructora de Shibari, fotógrafa y creadora de espacios.">
+<meta property="og:image" content="https://kitsune.net/img/og-image.jpg">
+<meta property="og:locale" content="es_AR">
+
+<!-- TWITTER CARDS -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KITSUNE">
+<meta name="twitter:description" content="Instructora de Shibari, fotógrafa y creadora de espacios.">
+<meta name="twitter:image" content="https://kitsune.net/img/og-image.jpg">
+
+<!-- FAVICON (ya lo tenés) -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <title data-i18n="agenda.meta.title">Agenda | KITSUNE</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">KITSUNE</a>
+        
+        <div class="lang-switcher">
+            <div class="lang-current">
+                <span class="lang-flag">🇦🇷</span>
+            </div>
+            <div class="lang-dropdown">
+                <div class="lang-option" data-lang="es"><span class="lang-flag">🇦🇷</span><span>ES</span></div>
+                <div class="lang-option" data-lang="en"><span class="lang-flag">🇬🇧</span><span>EN</span></div>
+                <div class="lang-option" data-lang="pt"><span class="lang-flag">🇧🇷</span><span>PT</span></div>
+                <div class="lang-option" data-lang="ja"><span class="lang-flag">🇯🇵</span><span>日本語</span></div>
+                <div class="lang-option" data-lang="zh"><span class="lang-flag">🇨🇳</span><span>中文</span></div>
+            </div>
+        </div>
+
+        <button class="menu-toggle" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="drawer-overlay" id="overlay"></div>
+    
+    <nav class="drawer" id="drawer" aria-hidden="true">
+        <ul class="drawer-nav">
+            <li><a href="index.html#caminos" data-i18n="nav.caminos">Caminos</a></li>
+            <li><a href="agenda.html" data-i18n="nav.agenda">Agenda</a></li>
+            <li><a href="galeria.html" data-i18n="nav.galeria">Galería</a></li>
+            <li><a href="tienda.html" data-i18n="nav.tienda">Tienda</a></li>
+            <li><a href="bio.html" data-i18n="nav.bio">Bio</a></li>
+            <li><a href="contacto.html" data-i18n="nav.contacto">Contacto</a></li>
+            <li><a href="https://www.patreon.com/cw/KitsuneProducciones" target="_blank" rel="noopener" data-i18n="nav.patreon">Patreon →</a></li>
+        </ul>
+    </nav>
+
+    <main class="agenda-page">
+        <h1 class="agenda-title" data-i18n="agenda.title">Agenda</h1>
+        
+        <div class="agenda-toggle">
+            <button class="toggle-btn active" data-tab="proximos" data-i18n="agenda.proximos">Próximos eventos</button>
+            <button class="toggle-btn" data-tab="pasados" data-i18n="agenda.pasados">Eventos pasados</button>
+        </div>
+
+        <div class="agenda-list active" id="proximos">
+            
+            <article class="event-card">
+                <div class="event-date">
+                    <span class="day">21</span>
+                    <span class="month" data-i18n="agenda.meses.feb">FEB</span>
+                </div>
+                <div class="event-info">
+                    <h3 data-i18n="agenda.eventos.0.titulo">Taller: "Ya sé hacer nudos! ...Y ahora qué? Biomecánica y Cadena cinética"</h3>
+                    <p class="event-desc" data-i18n="agenda.eventos.0.desc">Worktienda dirigido a conocer sobre la biomecánica del cuerpo, qué es la cadena cinética y cómo integrarlos al shibari.</p>
+                    <div class="event-meta">
+                        <span>📍 <span data-i18n="agenda.ubicacion.ba">Buenos Aires</span></span>
+                        <span>🕐 15:00 - 18:00</span>
+                    </div>
+                    <span class="event-status" data-i18n="agenda.estados.agotado">AGOTADO</span>
+                </div>
+            </article>
+
+            <article class="event-card">
+                <div class="event-date">
+                    <span class="day">15</span>
+                    <span class="month" data-i18n="agenda.meses.mar">MAR</span>
+                </div>
+                <div class="event-info">
+                    <h3 data-i18n="agenda.eventos.1.titulo">Taller: El camino del samurai</h3>
+                    <p class="event-desc" data-i18n="agenda.eventos.1.desc">Iniciación a la disciplina, técnica y precisión del Shibari tradicional.</p>
+                    <div class="event-meta">
+                        <span>📍 <span data-i18n="agenda.ubicacion.ba">Buenos Aires</span></span>
+                        <span>🕐 14:00 - 18:00</span>
+                    </div>
+                    <a href="https://forms.google.com" class="event-link" target="_blank" data-i18n="agenda.botones.inscribirse">Inscribirse →</a>
+                </div>
+            </article>
+
+            <article class="event-card">
+                <div class="event-date">
+                    <span class="day">22</span>
+                    <span class="month" data-i18n="agenda.meses.mar">MAR</span>
+                </div>
+                <div class="event-info">
+                    <h3 data-i18n="agenda.eventos.2.titulo">Yo suspendo sola! - Edición especial</h3>
+                    <p class="event-desc" data-i18n="agenda.eventos.2.desc">Taller intensivo para rope bottoms. Propiocepción, equilibrio y fuerza.</p>
+                    <div class="event-meta">
+                        <span>📍 <span data-i18n="agenda.ubicacion.cordoba">Córdoba</span></span>
+                        <span>🕐 10:00 - 14:00</span>
+                    </div>
+                    <span class="event-status" data-i18n="agenda.estados.confirmar">A confirmar</span>
+                </div>
+            </article>
+
+            <article class="event-card">
+                <div class="event-date">
+                    <span class="day">05</span>
+                    <span class="month" data-i18n="agenda.meses.abr">ABR</span>
+                </div>
+                <div class="event-info">
+                    <h3 data-i18n="agenda.eventos.3.titulo">Performance: Rituales de primavera</h3>
+                    <p class="event-desc" data-i18n="agenda.eventos.3.desc">Presentación en vivo con música en vivo. Espacio limitado.</p>
+                    <div class="event-meta">
+                        <span>📍 <span data-i18n="agenda.ubicacion.rosario">Rosario</span></span>
+                        <span>🕐 20:00</span>
+                    </div>
+                    <a href="mailto:info@kitsune.net" class="event-link" data-i18n="agenda.botones.reservar">Reservar entrada →</a>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="agenda-list" id="pasados">
+            
+            <article class="event-card past">
+                <div class="event-date">
+                    <span class="day">20</span>
+                    <span class="month" data-i18n="agenda.meses.feb">FEB</span>
+                </div>
+                <div class="event-info">
+                    <h3 data-i18n="agenda.pasados.0.titulo">El camino de la serpiente</h3>
+                    <p class="event-desc" data-i18n="agenda.pasados.0.desc">Taller de interpretación y educación somática. Completo.</p>
+                    <div class="event-meta">
+                        <span>📍 <span data-i18n="agenda.ubicacion.ba">Buenos Aires</span></span>
+                        <span data-i18n="agenda.estados.finalizado">✓ Finalizado</span>
+                    </div>
+                    <span class="event-status past-status" data-i18n="agenda.estados.evento_finalizado">Evento finalizado</span>
+                </div>
+            </article>
+
+            <article class="event-card past">
+                <div class="event-date">
+                    <span class="day">08</span>
+                    <span class="month" data-i18n="agenda.meses.feb">FEB</span>
+                </div>
+                <div class="event-info">
+                    <h3 data-i18n="agenda.pasados.1.titulo">Cine-debate: Shibari en el cine oriental</h3>
+                    <p class="event-desc" data-i18n="agenda.pasados.1.desc">Sesión de Patreon presencial. Proyección y debate.</p>
+                    <div class="event-meta">
+                        <span>📍 Online/Discord</span>
+                        <span data-i18n="agenda.estados.grabado">✓ Grabado</span>
+                    </div>
+                    <a href="https://www.patreon.com/cw/KitsuneProducciones" class="event-link" target="_blank" data-i18n="agenda.botones.grabacion">Ver grabación →</a>
+                </div>
+            </article>
+
+        </div>
+
+    </main>
+
+    <section class="contact" id="contacto">
+        <h2 data-i18n="contacto.title">Contacto</h2>
+        <div class="social-grid">
+            <a href="https://instagram.com/kink.tsune" class="social-link" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.patreon.com/cw/KitsuneProducciones" class="social-link" target="_blank" rel="noopener">Patreon</a>
+            <a href="https://discord.com" class="social-link" target="_blank" rel="noopener">Discord</a>
+            <a href="https://t.me/cba1919" class="social-link" target="_blank" rel="noopener">Telegram</a>
+            <a href="mailto:info@kitsune.net" class="social-link">Email</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p data-i18n="footer.copyright">&copy; 2026 KITSUNE. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html>

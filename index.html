@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "KITSUNE",
+  "alternateName": "Kitsune Producciones",
+  "description": "Instructora de Shibari, fotógrafa y creadora de espacios",
+  "url": "https://kitsune.net",
+  "sameAs": [
+    "https://instagram.com/kink.tsune",
+    "https://www.patreon.com/cw/KitsuneProducciones",
+    "https://t.me/cba1919"
+  ],
+  "jobTitle": "Instructora de Shibari",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "KITSUNE"
+  }
+}
+</script>
+        <!-- CHARSET Y VIEWPORT (ya los tenés) -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO BÁSICO -->
+<title data-i18n="meta.title">KITSUNE | Disciplina · Movimiento · Comunidad</title>
+<meta name="description" content="Instructora de Shibari, fotógrafa y creadora de espacios. Clases, sesiones privadas, producciones y comunidad.">
+<meta name="keywords" content="shibari, kinbaku, cuerdas, clases, talleres, fotografía, performances, Argentina">
+<meta name="author" content="KITSUNE">
+<meta name="robots" content="index, follow">
+
+<!-- CANONICAL (evitar contenido duplicado) -->
+<link rel="canonical" href="https://kitsune.net/">
+
+<!-- OPEN GRAPH (Facebook, WhatsApp, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kitsune.net/">
+<meta property="og:title" content="KITSUNE | Disciplina · Movimiento · Comunidad">
+<meta property="og:description" content="Instructora de Shibari, fotógrafa y creadora de espacios.">
+<meta property="og:image" content="https://kitsune.net/img/og-image.jpg">
+<meta property="og:locale" content="es_AR">
+
+<!-- TWITTER CARDS -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KITSUNE">
+<meta name="twitter:description" content="Instructora de Shibari, fotógrafa y creadora de espacios.">
+<meta name="twitter:image" content="https://kitsune.net/img/og-image.jpg">
+
+<!-- FAVICON (ya lo tenés) -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header class="header">
+    <a href="index.html" class="logo">KITSUNE</a>
+
+    <!-- LANGUAGE SWITCHER - ahora junto al menú -->
+    <div class="lang-switcher">
+    <div class="lang-current" data-lang="es">ES</div>
+    <div class="lang-dropdown">
+        <div class="lang-option" data-lang="es">
+            <span style="color: #75AADB;">●</span> ES
+        </div>
+        <div class="lang-option" data-lang="en">
+            <span style="color: #012169;">●</span> EN
+        </div>
+        <div class="lang-option" data-lang="pt">
+            <span style="color: #009739;">●</span> PT
+        </div>
+        <div class="lang-option" data-lang="ja">
+            <span style="color: #BC002D;">●</span> 日本語
+        </div>
+        <div class="lang-option" data-lang="zh">
+            <span style="color: #DE2910;">●</span> 中文
+        </div>
+    </div>
+</div>
+
+    <button
+        class="menu-toggle"
+        id="menuBtn"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+        <!-- DRAWER -->
+        <div class="drawer-overlay" id="overlay"></div>
+        <nav class="drawer" id="drawer" aria-hidden="true">
+            <ul class="drawer-nav">
+                <li><a href="index.html#caminos" data-i18n="nav.caminos">Caminos</a></li>
+                <li><a href="agenda.html" data-i18n="nav.agenda">Agenda</a></li>
+                <li><a href="galeria.html" data-i18n="nav.galeria">Galería</a></li>
+                <li><a href="tienda.html" data-i18n="nav.tienda">Tienda</a></li>
+                <li><a href="bio.html" data-i18n="nav.bio">Bio</a></li>
+                <li><a href="contacto.html" data-i18n="nav.contacto">Contacto</a></li>
+                <li><a href="https://www.patreon.com/cw/KitsuneProducciones" target="_blank" rel="noopener" data-i18n="nav.patreon">Patreon →</a></li>
+            </ul>
+            
+            <!-- Mobile language switcher -->
+            <div class="lang-switcher mobile">
+                <div class="lang-dropdown">
+                    <div class="lang-option" data-lang="es">
+                        <span class="lang-flag">🇦🇷</span>
+                        <span>ES</span>
+                    </div>
+                    <div class="lang-option" data-lang="en">
+                        <span class="lang-flag">🇬🇧</span>
+                        <span>EN</span>
+                    </div>
+                    <div class="lang-option" data-lang="pt">
+                        <span class="lang-flag">🇧🇷</span>
+                        <span>PT</span>
+                    </div>
+                    <div class="lang-option" data-lang="ja">
+                        <span class="lang-flag">🇯🇵</span>
+                        <span>日本語</span>
+                    </div>
+                    <div class="lang-option" data-lang="zh">
+                        <span class="lang-flag">🇨🇳</span>
+                        <span>中文</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero" id="inicio">
+            <div class="hero-carousel">
+                <div
+                    class="hero-slide active"
+                    role="img"
+                    aria-label="Shibari artístico"
+                ></div>
+                <div
+                    class="hero-slide"
+                    role="img"
+                    aria-label="Performance"
+                ></div>
+                <div
+                    class="hero-slide"
+                    role="img"
+                    aria-label="Sesión fotográfica"
+                ></div>
+            </div>
+
+            <div class="hero-overlay"></div>
+
+            <h1 class="hero-title" data-i18n="hero.title">KITSUNE</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Disciplina · Movimiento · Comunidad</p>
+
+            <div class="scroll-indicator">
+                <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path d="M12 5v14M19 12l-7 7-7-7" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- ABOUT CORTO -->
+        <section class="about" id="about">
+            <h2 data-i18n="about.title">Sobre</h2>
+            <p>
+                <span data-i18n="about.text">Instructora de Shibari. Fotógrafa. Creo espacios de exploración corporal, seguridad y arte.</span>
+                <a href="bio.html" class="text-link" data-i18n="about.link">Conocé más sobre mi trabajo →</a>
+            </p>
+        </section>
+
+        <!-- CARDS PRINCIPALES -->
+        <section class="main-nav">
+            <div class="main-nav-grid">
+                <!-- CARD 1: CLASES -->
+                <a
+                    href="#caminos"
+                    class="nav-card"
+                    id="clases"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <div
+                        class="nav-card-bg"
+                        style="
+                            background-image: url(&quot;https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&quot;);
+                        "
+                    ></div>
+                    <div class="nav-card-content">
+                        <h3 data-i18n="cards.clases.title">Clases</h3>
+                        <p data-i18n="cards.clases.desc">Shibari desde los fundamentos. Contenido exclusivo, comunidad Discord, cine-debate, mentorías.</p>
+                    </div>
+                </a>
+
+                <!-- CARD 2: GALERÍA -->
+                <a href="galeria.html" class="nav-card" id="galeria">
+                    <div
+                        class="nav-card-bg"
+                        style="
+                            background-image: url(&quot;https://images.unsplash.com/photo-1514525253440-b393452e8d26?w=800&quot;);
+                        "
+                    ></div>
+                    <div class="nav-card-content">
+                        <h3 data-i18n="cards.galeria.title">Galería</h3>
+                        <p data-i18n="cards.galeria.desc">Sesiones privadas, performances, producciones fotográficas. Trabajo artístico y documental.</p>
+                    </div>
+                </a>
+
+                <!-- CARD 3: TIENDA -->
+                <a
+                    href="tienda.html"
+                    class="nav-card"
+                    id="tienda"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <div
+                        class="nav-card-bg"
+                        style="
+                            background-image: url(&quot;https://images.unsplash.com/photo-1516961642265-531546e84af2?w=800&quot;);
+                        "
+                    ></div>
+                    <div class="nav-card-content">
+                        <h3 data-i18n="cards.tienda.title">Tienda</h3>
+                        <p data-i18n="cards.tienda.desc">Cuerdas de Shibari tratadas, kits para principiantes, accesorios y materiales seleccionados.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- CAMINOS DE APRENDIZAJE -->
+        <section class="learning-paths" id="caminos">
+            <h2 class="section-title" data-i18n="caminos.title">Caminos de aprendizaje</h2>
+            <p class="section-subtitle" data-i18n="caminos.subtitle">Si la Vida es una escuela por qué no aprenderlo todo desde la psicomagia hasta la ciencia, desde el inconsciente a la manifestación. Acá rompemos los límites de lo conocido para que recuperes la memoria antigua. Solta las expectativas, flui con la intuición de tu corazón y preparate.</p>
+            
+            <div class="paths-grid">
+                <!-- CAMINO 1: SAMURAI -->
+                <article class="path-card">
+                    <div class="path-image" style="background-image: url('https://images.unsplash.com/photo-1514539079130-25950c84af65?w=600')"></div>
+                    <div class="path-content">
+                        <h3 data-i18n="caminos.samurai.title">El camino del samurai</h3>
+                        <div class="path-fundamentals">
+                            <span data-i18n="caminos.samurai.fundamentals.0">disciplina</span>
+                            <span data-i18n="caminos.samurai.fundamentals.1">técnica</span>
+                            <span data-i18n="caminos.samurai.fundamentals.2">precisión</span>
+                        </div>
+                        <p class="path-desc" data-i18n="caminos.samurai.desc">
+                            Perfecto para quien tiene ganas de sumarse a una disciplina que te permite jugar a ser el samurai que siempre quisiste mientras aprendes una habilidad manual nueva, compartis con tu pareja y aprendes historia y leyendas míticas!
+                        </p>
+                        <p class="path-cta" data-i18n="caminos.samurai.cta">¿A qué estás esperando?</p>
+                        <a href="mailto:info@kitsune.net" class="path-button" data-i18n="caminos.samurai.button">Más info</a>
+                    </div>
+                </article>
+
+                <!-- CAMINO 2: SERPIENTE -->
+                <article class="path-card">
+                    <div class="path-image" style="background-image: url('https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?w=600')"></div>
+                    <div class="path-content">
+                        <h3 data-i18n="caminos.serpiente.title">El camino de la serpiente</h3>
+                        <div class="path-fundamentals">
+                            <span data-i18n="caminos.serpiente.fundamentals.0">interpretación</span>
+                            <span data-i18n="caminos.serpiente.fundamentals.1">educación somática</span>
+                            <span data-i18n="caminos.serpiente.fundamentals.2">biomecánica</span>
+                        </div>
+                        <p class="path-desc" data-i18n="caminos.serpiente.desc">
+                            Perfecto para quien viene de una rama de las artes y ve una danza, una pintura o una experiencia en lo que pasa entre mis cuerdas. Herramientas adaptadas para entender la técnica y disciplina desde un enfoque más flexible.
+                        </p>
+                        <p class="path-cta" data-i18n="caminos.serpiente.cta">¿A qué estás esperando?</p>
+                        <a href="mailto:info@kitsune.net" class="path-button" data-i18n="caminos.serpiente.button">Más info</a>
+                    </div>
+                </article>
+
+                <!-- CAMINO 3: YO SUSPENDO SOLA -->
+                <article class="path-card">
+                    <div class="path-image" style="background-image: url('https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600')"></div>
+                    <div class="path-content">
+                        <h3 data-i18n="caminos.suspension.title">Yo suspendo sola!</h3>
+                        <div class="path-fundamentals">
+                            <span data-i18n="caminos.suspension.fundamentals.0">propiocepción</span>
+                            <span data-i18n="caminos.suspension.fundamentals.1">equilibrio</span>
+                            <span data-i18n="caminos.suspension.fundamentals.2">fuerza</span>
+                        </div>
+                        <p class="path-desc" data-i18n="caminos.suspension.desc">
+                            Taller para rope bottoms donde enseñamos propiocepción, puntos de apoyo y equilibrio en el aire y piso. Mejora tu tono muscular y tu presencia en la sesión. Nos hace sentirnos las Diosas que somos al vernos tener avances en nuestro conocimiento corporal.
+                        </p>
+                        <p class="path-cta" data-i18n="caminos.suspension.cta">¿A qué estás esperando?</p>
+                        <a href="mailto:info@kitsune.net" class="path-button" data-i18n="caminos.suspension.button">Más info</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="contact" id="contacto">
+            <h2 data-i18n="contacto.title">Conectá</h2>
+            <div class="social-grid">
+                <a
+                    href="https://instagram.com/kink.tsune"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener"
+                    >Instagram</a
+                >
+                <a
+                    href="https://www.patreon.com/cw/KitsuneProducciones"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener"
+                    >Patreon</a
+                >
+                <a
+                    href="https://discord.com"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener"
+                    >Discord</a
+                >
+                <a
+                    href="https://t.me/cba1919"
+                    class="social-link"
+                    target="_blank"
+                    rel="noopener"
+                    >Telegram</a
+                >
+                <a href="mailto:info@kitsune.net" class="social-link"
+                    >Email</a
+                >
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p data-i18n="footer.copyright">&copy; 2026 KITSUNE. Todos los derechos reservados.</p>
+        </footer>
+
+        <script src="js/main.js"></script>
+        <script src="js/i18n.js"></script>
+    </body>
+</html>
