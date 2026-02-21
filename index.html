@@ -328,5 +328,35 @@
 
         <script src="https://cdn.jsdelivr.net/gh/kitsune-shibari/kitsune.github.io/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/kitsune-shibari/kitsune.github.io/js/i18n.js"></script>
+            <!-- ... tu contenido ... -->
+
+    <script>
+        // Hero Carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            
+            if (slides.length === 0) {
+                console.error('No se encontraron slides del hero');
+                return;
+            }
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            const intervalTime = 5000;
+            
+            console.log('Carrusel iniciado con', totalSlides, 'slides');
+            
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % totalSlides;
+                slides[currentSlide].classList.add('active');
+                console.log('Cambiando a slide', currentSlide + 1);
+            }
+            
+            setInterval(nextSlide, intervalTime);
+        });
+    </script>
+</body>
+</html>
     </body>
 </html>
