@@ -192,4 +192,20 @@ if (modal) {
             closeModal();
         }
     });
+// Hero Carousel
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    const intervalTime = 5000; // Cambia cada 5 segundos
+    
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % totalSlides;
+        slides[currentSlide].classList.add('active');
+    }
+    
+    // Cambio automático
+    setInterval(nextSlide, intervalTime);
+});
 }
