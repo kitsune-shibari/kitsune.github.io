@@ -1442,6 +1442,59 @@ a {
     letter-spacing: 0.05em;
     color: var(--color-texto);
 }
+/* ============================================
+   BIO - IMAGEN FLOTANTE
+   ============================================ */
+
+.bio-intro {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+}
+
+.bio-image-container {
+    flex-shrink: 0;
+}
+
+.bio-portrait {
+    width: 280px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bio-text-content {
+    flex: 1;
+}
+
+.bio-text-content h2 {
+    margin-top: 0;
+}
+
+/* MOBILE: imagen arriba, texto abajo */
+@media (max-width: 768px) {
+    .bio-intro {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    
+    .bio-image-container {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .bio-portrait {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+    
+    .bio-text-content h2 {
+        text-align: center;
+    }
+}
 
 /* Círculos de color para cada idioma en lugar de banderas */
 .lang-current[data-lang="es"] { background: linear-gradient(135deg, #75AADB 50%, #FFFFFF 50%); color: #000; }
