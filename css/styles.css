@@ -211,16 +211,16 @@ a {
 }
 
 .hero-slide:nth-child(1) {
-    background-image: url('https://cdn.jsdelivr.net/gh/kitsune-shibari/kitsune.github.io@main/images/hero-1.jpg');
+    background-image: url('https://cdn.jsdelivr.net/gh/kitsune-shibari/kitsune.github.io@main/img/hero-1.jpg');
     opacity: 1;
 }
 
 .hero-slide:nth-child(2) {
-    background-image: url('https://cdn.jsdelivr.net/gh/kitsune-shibari/kitsune.github.io@main/images/hero-2.jpg');
+    background-image: url('https://cdn.jsdelivr.net/gh/kitsune-shibari/kitsune.github.io@main/img/hero-2.jpg');
 }
 
 .hero-slide:nth-child(3) {
-    background-image: url('https://cdn.jsdelivr.net/gh/kitsune-shibari/kitsune.github.io@main/images/hero-3.jpg');
+    background-image: url('https://cdn.jsdelivr.net/gh/kitsune-shibari/kitsune.github.io@main/img/hero-3.jpg');
 }
 .hero-slide.active {
     opacity: 1;
