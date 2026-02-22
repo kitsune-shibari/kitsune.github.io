@@ -1362,6 +1362,7 @@ a {
 .lang-current[data-lang="pt"] { background: linear-gradient(135deg, #009739 50%, #FEDD00 50%); color: #000; }
 .lang-current[data-lang="ja"] { background: #BC002D; color: #fff; }
 .lang-current[data-lang="zh"] { background: #DE2910; color: #fff; }
+
 /* ============================================
    BIO - LAYOUT CON IMAGEN FLOTANTE
    ============================================ */
@@ -1373,19 +1374,38 @@ a {
     padding-left: var(--space-md);
     padding-right: var(--space-md);
 }
+.bio-title {
+    font-family: var(--font-titulos);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: var(--space-sm);
+}
 
 /* SECCIÓN SUPERIOR: Imagen + Quién soy lado a lado */
 .bio-top {
-    display: grid !important;
-    grid-template-columns: 280px 1fr !important;
-    gap: 2rem !important;
-    align-items: start !important;
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+    margin-bottom: var(--space-xl);
 }
 
 .bio-image-container {
     flex-shrink: 0;
     width: 280px;
     height: 350px;
+}
+
+.bio-portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
 }
 
 .bio-intro-content {
@@ -1397,11 +1417,32 @@ a {
     text-align: left;
 }
 
-/* MOBILE */
+.bio-lead {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* CONTENIDO INFERIOR */
+.bio-content .bio-section {
+    margin-bottom: var(--space-xl);
+}
+
+/* MOBILE: Apilado */
 @media (max-width: 768px) {
     .bio-top {
         flex-direction: column;
         align-items: center;
+        gap: var(--space-md);
+    }
+    
+    .bio-image-container {
+        width: 240px;
+        height: 300px;
+    }
+    
+    .bio-intro-content {
+        text-align: center;
     }
     
     .bio-intro-content h2 {
