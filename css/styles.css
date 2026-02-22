@@ -264,19 +264,26 @@ a {
 
 /* ABOUT */
 .about {
-    padding: var(--space-xl) var(--space-md);
-    max-width: 800px;
-    margin: 0 auto;
+    font-family: var(--font-titulos);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     text-align: center;
+    margin-bottom: var(--space-xl);
+    color: var(--color-accent);
 }
 
 .about h2 {
     font-family: var(--font-titulos);
-    font-size: 0.875rem;
-    letter-spacing: 0.3em;
+    font-size: clamp(2rem, 6vw, 3.5rem);  /* ANTES: 0.875rem */
+    font-weight: 400;
+    letter-spacing: 0.15em;                  /* ANTES: 0.3em */
     text-transform: uppercase;
     margin-bottom: var(--space-md);
-    opacity: 0.6;
+    opacity: 1;                              /* ANTES: 0.6 */
+    color: var(--color-accent);              /* AGREGAR ESTA LÍNEA */
+    text-align: center;                      /* ASEGURAR QUE ESTÉ CENTRADO */
 }
 
 .about p {
