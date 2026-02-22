@@ -1463,6 +1463,7 @@ a {
 .bio-intro-content h2 {
     margin-top: 0;
     text-align: left;
+    color: var(--color-accent);
 }
 
 .bio-lead {
@@ -1495,6 +1496,7 @@ a {
     
     .bio-intro-content h2 {
         text-align: center;
+        color: var(--color-accent);
     }
 }
 .slide video {
