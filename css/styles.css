@@ -954,11 +954,13 @@ a {
     z-index: 2001;
     border-radius: 4px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-image {
-    position: absolute;
-    inset: 0;
+    position: relative;
+    flex: 1;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -966,14 +968,53 @@ a {
 }
 
 .modal-gradient {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: var(--space-lg) var(--space-md) var(--space-md);
-    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    position: relative;
+    padding: var(--space-md);
+    background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.8));
 }
 
+/* MOBILE */
+@media (max-width: 768px) {
+    .modal-content {
+        aspect-ratio: 3 / 4;
+        max-height: 85vh;
+    }
+    
+    .modal-image {
+        min-height: 60%;
+    }
+    
+    .modal-gradient {
+        padding: var(--space-sm);
+    }
+    
+    .modal-title {
+        font-size: 1.25rem;
+    }
+    
+    .modal-desc {
+        font-size: 0.875rem;
+    }
+    
+    .modal-nav {
+        padding: 15px;
+        font-size: 20px;
+        z-index: 2002;
+    }
+    
+    .modal-nav.prev { left: 10px; }
+    .modal-nav.next { right: 10px; }
+    
+    .slider-arrow {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        z-index: 10;
+    }
+    
+    .slider-arrow.prev { left: 5px; }
+    .slider-arrow.next { right: 5px; }
+}
 .modal-title {
     font-family: var(--font-titulos);
     font-size: 1.5rem;
@@ -1020,6 +1061,12 @@ a {
 .modal-link.patreon:hover {
     background: var(--color-accent);
     color: var(--color-fondo);
+}
+/* Flechas más táctiles */
+.slider-arrow, .modal-nav {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    cursor: pointer;
 }
 
 /* ============================================
@@ -1457,4 +1504,22 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.bg-texture {
+    position: fixed;
+    inset: 0;
+    background-image: url('https://cdn.jsdelivr.net/gh/kitsune-shibari/kitsune.github.io@main/img/logo-kitsune-mc-ol.webp'); /* O el path que sea */
+    background-size: 60%; /* Ajustar tamaño */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.03; /* Muy sutil */
+    pointer-events: none; /* No interfiere con clicks */
+    z-index: 0; /* Detrás de todo el contenido */
+}
+
+/* Asegurar que el contenido esté por encima */
+.header, .hero, .about, .learning-paths, 
+.gallery-page, .footer, .contact {
+    position: relative;
+    z-index: 1;
 }

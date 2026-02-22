@@ -240,129 +240,133 @@
     <script src="js/i18n.js"></script>
     
     <!-- Script adicional para la funcionalidad mejorada del modal -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Variables globales para el modal
-        let currentModalGallery = null;
-        let currentModalSlide = 0;
-        let modalSlides = [];
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('galleryModal');
+    const modalImage = modal.querySelector('.modal-image');
+    const modalTitle = modal.querySelector('.modal-title');
+    const modalDesc = modal.querySelector('.modal-desc');
+    const modalCounter = modal.querySelector('.modal-counter');
+    
+    let currentModalGallery = null;
+    let currentModalSlide = 0;
+    let modalSlides = [];
+    
+    function openModal(galleryItem, slideIndex = 0) {
+        const slides = galleryItem.querySelectorAll('.slide');
+        const titleElement = galleryItem.querySelector('.gallery-item-title');
+        const descElement = galleryItem.querySelector('.gallery-item-desc');
         
-        const modal = document.getElementById('galleryModal');
-        const modalImage = modal.querySelector('.modal-image');
-        const modalTitle = modal.querySelector('.modal-title');
-        const modalDesc = modal.querySelector('.modal-desc');
-        const modalCounter = modal.querySelector('.modal-counter');
+        modalTitle.textContent = titleElement ? titleElement.textContent : '';
+        modalDesc.textContent = descElement ? descElement.textContent : '';
         
-        // Función para abrir el modal
-        function openModal(galleryItem, slideIndex = 0) {
-            const slides = galleryItem.querySelectorAll('.slide');
-            const title = galleryItem.querySelector('.gallery-item-title').textContent;
-            const desc = galleryItem.querySelector('.gallery-item-desc').textContent;
-            
-            // Guardar referencia a la galería actual
-            currentModalGallery = galleryItem;
-            modalSlides = Array.from(slides);
-            currentModalSlide = slideIndex;
-            
-            // Actualizar contenido del modal
-            updateModalContent();
-            
-            // Mostrar modal
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        currentModalGallery = galleryItem;
+        modalSlides = Array.from(slides);
+        currentModalSlide = slideIndex;
+        
+        updateModalContent();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function updateModalContent() {
+        if (modalSlides.length === 0) return;
+        
+        const activeSlide = modalSlides[currentModalSlide];
+        const video = activeSlide.querySelector('video');
+        
+        modalImage.innerHTML = '';
+        
+        if (video) {
+            const clonedVideo = video.cloneNode(true);
+            clonedVideo.style.cssText = 'width:100%;height:100%;object-fit:contain;';
+            clonedVideo.autoplay = true;
+            clonedVideo.muted = true;
+            modalImage.appendChild(clonedVideo);
+            modalImage.style.backgroundImage = '';
+        } else {
+            modalImage.style.backgroundImage = activeSlide.style.backgroundImage;
         }
         
-        // Función para actualizar el contenido del modal
-        function updateModalContent() {
-            if (modalSlides.length === 0) return;
-            
-            const activeSlide = modalSlides[currentModalSlide];
-            const bgImage = activeSlide ? activeSlide.style.backgroundImage : '';
-            
-            modalImage.style.backgroundImage = bgImage;
-            modalCounter.textContent = `${currentModalSlide + 1} / ${modalSlides.length}`;
-        }
+        modalCounter.textContent = `${currentModalSlide + 1} / ${modalSlides.length}`;
+    }
+    
+    function goPrev(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (modalSlides.length === 0) return;
+        currentModalSlide = (currentModalSlide - 1 + modalSlides.length) % modalSlides.length;
+        updateModalContent();
+    }
+    
+    function goNext(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (modalSlides.length === 0) return;
+        currentModalSlide = (currentModalSlide + 1) % modalSlides.length;
+        updateModalContent();
+    }
+    
+    // Event listeners galerías
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        const slider = item.querySelector('.gallery-slider');
+        const title = item.querySelector('.gallery-item-title');
+        const slides = item.querySelectorAll('.slide');
         
-        // Event listeners para cada galería
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            const slider = item.querySelector('.gallery-slider');
-            const title = item.querySelector('.gallery-item-title');
-            const slides = item.querySelectorAll('.slide');
-            
-            // Click en el slider (imagen) abre el modal
-            if (slider) {
-                slider.addEventListener('click', function(e) {
-                    // No abrir si se clickearon las flechas del slider
-                    if (e.target.classList.contains('slider-arrow')) return;
-                    
-                    // Encontrar el slide activo
-                    let activeIndex = 0;
-                    slides.forEach((slide, index) => {
-                        if (slide.classList.contains('active')) {
-                            activeIndex = index;
-                        }
-                    });
-                    
-                    openModal(item, activeIndex);
+        if (slider) {
+            slider.addEventListener('click', function(e) {
+                if (e.target.closest('.slider-arrow')) return;
+                
+                let activeIndex = 0;
+                slides.forEach((slide, idx) => {
+                    if (slide.classList.contains('active')) activeIndex = idx;
                 });
-            }
-            
-            // Click en el título también abre el modal
-            if (title) {
-                title.addEventListener('click', function() {
-                    let activeIndex = 0;
-                    slides.forEach((slide, index) => {
-                        if (slide.classList.contains('active')) {
-                            activeIndex = index;
-                        }
-                    });
-                    openModal(item, activeIndex);
-                });
-            }
-        });
-        
-        // Navegación del modal - flecha anterior
-        modal.querySelector('.modal-nav.prev').addEventListener('click', function(e) {
-            e.stopPropagation();
-            if (modalSlides.length === 0) return;
-            currentModalSlide = (currentModalSlide - 1 + modalSlides.length) % modalSlides.length;
-            updateModalContent();
-        });
-        
-        // Navegación del modal - flecha siguiente
-        modal.querySelector('.modal-nav.next').addEventListener('click', function(e) {
-            e.stopPropagation();
-            if (modalSlides.length === 0) return;
-            currentModalSlide = (currentModalSlide + 1) % modalSlides.length;
-            updateModalContent();
-        });
-        
-        // Cerrar modal
-        function closeModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-            currentModalGallery = null;
-            modalSlides = [];
+                openModal(item, activeIndex);
+            });
         }
         
-        modal.querySelectorAll('[data-close-modal]').forEach(el => {
-            el.addEventListener('click', closeModal);
-        });
-        
-        // Teclado - Escape para cerrar, flechas para navegar
-        document.addEventListener('keydown', (e) => {
-            if (!modal.classList.contains('active')) return;
-            
-            if (e.key === 'Escape') {
-                closeModal();
-            } else if (e.key === 'ArrowLeft') {
-                modal.querySelector('.modal-nav.prev').click();
-            } else if (e.key === 'ArrowRight') {
-                modal.querySelector('.modal-nav.next').click();
-            }
-        });
+        if (title) {
+            title.addEventListener('click', function() {
+                let activeIndex = 0;
+                slides.forEach((slide, idx) => {
+                    if (slide.classList.contains('active')) activeIndex = idx;
+                });
+                openModal(item, activeIndex);
+            });
+        }
     });
-    </script>
+    
+    // Navegación modal - click y touch
+    const prevBtn = modal.querySelector('.modal-nav.prev');
+    const nextBtn = modal.querySelector('.modal-nav.next');
+    
+    prevBtn.addEventListener('click', goPrev);
+    nextBtn.addEventListener('click', goNext);
+    prevBtn.addEventListener('touchstart', goPrev, {passive: false});
+    nextBtn.addEventListener('touchstart', goNext, {passive: false});
+    
+    // Cerrar modal
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        currentModalGallery = null;
+        modalSlides = [];
+        modalImage.innerHTML = '';
+    }
+    
+    modal.querySelectorAll('[data-close-modal]').forEach(el => {
+        el.addEventListener('click', closeModal);
+    });
+    
+    // Teclado
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeModal();
+        else if (e.key === 'ArrowLeft') goPrev(e);
+        else if (e.key === 'ArrowRight') goNext(e);
+    });
+});
+</script>
 </body>
 
 </html>

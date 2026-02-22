@@ -112,28 +112,19 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentModalSlide = 0;
     let modalSlides = [];
     
-    // Función para abrir el modal
-    function openModal(galleryItem, slideIndex = 0) {
+        function openModal(galleryItem, slideIndex = 0) {
         const slides = galleryItem.querySelectorAll('.slide');
-        
-        // OBTENER TÍTULO Y DESCRIPCIÓN DEL ARTÍCULO
         const titleElement = galleryItem.querySelector('.gallery-item-title');
         const descElement = galleryItem.querySelector('.gallery-item-desc');
         
-        const titleText = titleElement ? titleElement.textContent : '';
-        const descText = descElement ? descElement.textContent : '';
+        modalTitle.textContent = titleElement ? titleElement.textContent : '';
+        modalDesc.textContent = descElement ? descElement.textContent : '';
         
-        // Guardar referencias
         currentModalGallery = galleryItem;
         modalSlides = Array.from(slides);
         currentModalSlide = slideIndex;
         
-        // Actualizar modal con los datos del artículo
-        if (modalTitle) modalTitle.textContent = titleText;
-        if (modalDesc) modalDesc.textContent = descText;
-        
         updateModalContent();
-        
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -205,20 +196,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Navegación del modal
-    modal.querySelector('.modal-nav.prev').addEventListener('click', function(e) {
+       function goPrev(e) {
+        e.preventDefault();
         e.stopPropagation();
         if (modalSlides.length === 0) return;
         currentModalSlide = (currentModalSlide - 1 + modalSlides.length) % modalSlides.length;
         updateModalContent();
-    });
+    }
     
-    modal.querySelector('.modal-nav.next').addEventListener('click', function(e) {
+    function goNext(e) {
+        e.preventDefault();
         e.stopPropagation();
         if (modalSlides.length === 0) return;
         currentModalSlide = (currentModalSlide + 1) % modalSlides.length;
         updateModalContent();
-    });
+    }
+    
+    const prevBtn = modal.querySelector('.modal-nav.prev');
+    const nextBtn = modal.querySelector('.modal-nav.next');
+    
+    prevBtn.addEventListener('click', goPrev);
+    nextBtn.addEventListener('click', goNext);
+    prevBtn.addEventListener('touchstart', goPrev, {passive: false});
+    nextBtn.addEventListener('touchstart', goNext, {passive: false});
     
     // Cerrar modal
     function closeModal() {
@@ -264,4 +264,44 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cambio automático
     setInterval(nextSlide, intervalTime);
+});
+// ==========================================
+// GALERÍA SLIDERS - Navegación táctil
+// ==========================================
+document.querySelectorAll('.gallery-item').forEach(item => {
+    const slides = item.querySelectorAll('.slide');
+    const prevBtn = item.querySelector('.slider-arrow.prev');
+    const nextBtn = item.querySelector('.slider-arrow.next');
+    const counter = item.querySelector('.slide-counter');
+    
+    if (slides.length === 0 || !prevBtn || !nextBtn) return;
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    
+    function updateSlider() {
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
+        });
+        if (counter) counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+    }
+    
+    function prevSlide(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    }
+    
+    function nextSlide(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+    }
+    
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('touchstart', prevSlide, {passive: false});
+    nextBtn.addEventListener('touchstart', nextSlide, {passive: false});
 });
