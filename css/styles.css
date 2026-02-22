@@ -1475,6 +1475,7 @@ a {
 /* CONTENIDO INFERIOR */
 .bio-content .bio-section {
     margin-bottom: var(--space-xl);
+    color: var(--color-accent);
 }
 
 /* MOBILE: Apilado */
