@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kitsune.net/sitemap.xml
+Sitemap: https://kitsune-shibari.art/sitemap.xml
