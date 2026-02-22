@@ -19,7 +19,7 @@ const translations = {
         },
         about: {
             title: "Sobre",
-            text: "Instructora de Shibari. Fotógrafa. Creo espacios de exploración corporal, seguridad y arte.",
+            text: "Instructora de Shibari. Fotógrafa. Creo espacios de exploración corporal, seguridad, arte y espiritualidad a través de las cuerdas.",
             link: "Conocé más sobre mi trabajo →"
         },
         cards: {
