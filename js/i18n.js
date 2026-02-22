@@ -129,7 +129,7 @@ const translations = {
             subtitle: "Sesiones, performances y producciones",
             ver_sesion: "Ver sesión completa →",
             modal: { titulo: "Título de la sesión", desc: "Descripción completa de la sesión.", patreon: "Ver sesión completa" },
-            sesiones: [{ titulo: "Sesión #1 - Sekibaku 101", desc: "Descripción breve de la sesión, el concepto, los participantes y el contexto. Puede ser de 2-3 líneas." }]
+            sesiones: [{ titulo: "Kitsession #1 - Sol y Aire", desc: "El aire libre, la luz del sol y la primavera pueden ser el contexto ideal para experimentar la conexión con lo sagrado de la naturaleza y entre nosotras, dejando que las cuerdas sean canal." }]
         },
         tienda: {
             meta: { title: "Tienda | KITSUNE" },
