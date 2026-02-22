@@ -1523,3 +1523,12 @@ a {
     position: relative;
     z-index: 1;
 }
+.about-subtitle {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-xl);
+    opacity: 0.8;
+    font-style: italic;
+}
