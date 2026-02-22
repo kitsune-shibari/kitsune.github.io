@@ -294,7 +294,6 @@ a {
     font-size: 0.875rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--color-accent);
     transition: var(--transition-smooth);
 }
 
