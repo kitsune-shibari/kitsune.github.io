@@ -428,89 +428,6 @@ a {
     font-size: 0.75rem;
     opacity: 0.5;
 }
-
-.bio-page {
-    padding-top: 100px;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: var(--space-md);
-    padding-right: var(--space-md);
-}
-
-.bio-hero {
-    text-align: center;
-    padding: var(--space-xl) 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: var(--space-xl);
-}
-
-.bio-title {
-    font-family: var(--font-titulos);
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    font-weight: 400;
-    letter-spacing: 0.2em;
-    margin-bottom: var(--space-md);
-    text-transform: uppercase;
-}
-
-.bio-tagline {
-    font-size: 1.125rem;
-    font-style: italic;
-    opacity: 0.8;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.bio-section {
-    margin-bottom: var(--space-xl);
-}
-
-.bio-section h2 {
-    font-family: var(--font-titulos);
-    font-size: 1.25rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: var(--space-md);
-    color: var(--color-accent);
-}
-
-.bio-section p {
-    font-size: 1rem;
-    line-height: 1.8;
-    opacity: 0.9;
-    margin-bottom: var(--space-md);
-}
-
-.bio-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.bio-list li {
-    padding: var(--space-xs) 0;
-    padding-left: var(--space-md);
-    position: relative;
-    opacity: 0.9;
-}
-
-.bio-list li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--color-accent);
-}
-
-/* RESPONSIVE */
-@media (min-width: 768px) {
-    .header {
-        padding: var(--space-sm) var(--space-lg);
-    }
-    
-    .drawer {
-        padding-top: 120px;
-    }
-}
 /* ============================================
    CAMINOS DE APRENDIZAJE
    ============================================ */
@@ -1437,23 +1354,36 @@ a {
     letter-spacing: 0.05em;
     color: var(--color-texto);
 }
+
+
+/* Círculos de color para cada idioma en lugar de banderas */
+.lang-current[data-lang="es"] { background: linear-gradient(135deg, #75AADB 50%, #FFFFFF 50%); color: #000; }
+.lang-current[data-lang="en"] { background: #012169; color: #fff; }
+.lang-current[data-lang="pt"] { background: linear-gradient(135deg, #009739 50%, #FEDD00 50%); color: #000; }
+.lang-current[data-lang="ja"] { background: #BC002D; color: #fff; }
+.lang-current[data-lang="zh"] { background: #DE2910; color: #fff; }
 /* ============================================
-   BIO - IMAGEN A LA IZQUIERDA, TEXTO A LA DERECHA
+   BIO - LAYOUT CON IMAGEN FLOTANTE
    ============================================ */
 
-.bio-intro {
-    display: flex !important; /* Forzamos flex */
-    flex-direction: row !important; /* Horizontal */
-    gap: 3rem;
-    align-items: flex-start; /* Alineados arriba */
-    justify-content: flex-start; /* Todo a la izquierda */
+.bio-page {
+    padding-top: 100px;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+}
+
+/* SECCIÓN SUPERIOR: Imagen + Quién soy lado a lado */
+.bio-top {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+    margin-bottom: var(--space-xl);
 }
 
 .bio-image-container {
-    flex-shrink: 0; /* No se encoge */
+    flex-shrink: 0;
     width: 280px;
     height: 350px;
 }
@@ -1462,52 +1392,50 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: block;
 }
 
-.bio-text-content {
-    flex: 1; /* Ocupa el resto del espacio */
-    text-align: left; /* Texto alineado a la izquierda */
+.bio-intro-content {
+    flex: 1;
 }
 
-.bio-text-content h2 {
+.bio-intro-content h2 {
     margin-top: 0;
-    margin-bottom: 1rem;
     text-align: left;
 }
 
-/* MOBILE: apilados */
+.bio-lead {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* CONTENIDO INFERIOR */
+.bio-content .bio-section {
+    margin-bottom: var(--space-xl);
+}
+
+/* MOBILE: Apilado */
 @media (max-width: 768px) {
-    .bio-intro {
-        flex-direction: column !important;
+    .bio-top {
+        flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: var(--space-md);
     }
     
     .bio-image-container {
-        width: 280px;
-        height: 350px;
+        width: 240px;
+        height: 300px;
     }
     
-    .bio-text-content {
+    .bio-intro-content {
         text-align: center;
     }
     
-    .bio-text-content h2 {
+    .bio-intro-content h2 {
         text-align: center;
     }
-}
-
-/* Círculos de color para cada idioma en lugar de banderas */
-.lang-current[data-lang="es"] { background: linear-gradient(135deg, #75AADB 50%, #FFFFFF 50%); color: #000; }
-.lang-current[data-lang="en"] { background: #012169; color: #fff; }
-.lang-current[data-lang="pt"] { background: linear-gradient(135deg, #009739 50%, #FEDD00 50%); color: #000; }
-.lang-current[data-lang="ja"] { background: #BC002D; color: #fff; }
-.lang-current[data-lang="zh"] { background: #DE2910; color: #fff; }
-
-.bio-section.bio-intro {
-    display: flex !important;
-    flex-direction: row !important;
 }
