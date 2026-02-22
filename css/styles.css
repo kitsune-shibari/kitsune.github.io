@@ -1376,10 +1376,10 @@ a {
 
 /* SECCIÓN SUPERIOR: Imagen + Quién soy lado a lado */
 .bio-top {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    margin-bottom: var(--space-xl);
+    display: grid !important;
+    grid-template-columns: 280px 1fr !important;
+    gap: 2rem !important;
+    align-items: start !important;
 }
 
 .bio-image-container {
