@@ -90,10 +90,10 @@ const translations = {
                 title: "Trayectoria",
                 "2022": "Inicio de formación en Shibari tradicional.",
                 "2023": "Apertura de espacio propio. Inicio dictado de talleres y clases regulares.",
-                "2024": "Comienzo de formación en Seikubaku en la escuela Yagami Ryu.",
-                "2025_1": "Certificación de Sekibaku por Shibari Dojo de la escuela Yagami Ryu con Señor Interior. Bogotá, Colombia.",
+                "2024": "Comienzo de especialización en Seikubaku, biomecánica y neurociencia aplicada a la práctica del Shibari.",
+                "2025_1": "Certificación de Sekibaku por Shibari Dojo con Señor Interior. Bogotá, Colombia.",
                 "2025_2": "Publicación del libro \"El cuerpo como mapa: la cosmovisión andina explicando el shibari como herramienta de autoconocimiento\".",
-                "2026": "Lanzamiento de KITSUNE como plataforma integrada: Enseñanza, Producción y Comunidad."
+                "2026": "Lanzamiento de KITSUNE como plataforma integrada: Marca AylluRyu, Enseñanza, Producción y Comunidad."
             },
             filosofia: {
                 title: "Filosofía de trabajo",
@@ -124,13 +124,17 @@ const translations = {
             nota: { "1": "Respuesta en 24-48hs. Para consultas sobre clases, revisá primero la sección", "2": "Caminos" }
         },
         galeria: {
-            meta: { title: "Galería | KITSUNE" },
-            title: "Galería",
-            subtitle: "Sesiones, performances y producciones",
-            ver_sesion: "Ver sesión completa →",
-            modal: { titulo: "Título de la sesión", desc: "Descripción completa de la sesión.", patreon: "Ver sesión completa" },
-            sesiones: [{ titulo: "Kitsession #1 - Sol y Aire", desc: "El aire libre, la luz del sol y la primavera pueden ser el contexto ideal para experimentar la conexión con lo sagrado de la naturaleza y entre nosotras, dejando que las cuerdas sean canal." }]
+    sesiones: [
+        { 
+            titulo: "Kitsession #1 - Bizarrope", 
+            desc: "A veces (siempre) el shibari nos ofrece la posibilidad de jugar y en lo lúdico podemos dejarnos interpretar lo que sentimos de manera genuina. Es sólo cuestión de estar presentes." 
         },
+        { 
+            titulo: "Kitsession #2 - Sol y Aire", 
+            desc: "El aire libre, la luz del sol y la primavera pueden ser el contexto ideal para experimentar la conexión con lo sagrado de la naturaleza y entre nosotras, dejando que las cuerdas sean canal." 
+        }
+    ]
+},
         tienda: {
             meta: { title: "Tienda | KITSUNE" },
             title: "Tienda",
@@ -231,8 +235,8 @@ const translations = {
                 title: "Trajectory",
                 "2022": "Beginning of training in traditional Shibari.",
                 "2023": "Opening of own space. Start of teaching workshops and regular classes.",
-                "2024": "Beginning of training in Seikubaku at the Yagami Ryu school.",
-                "2025_1": "Certification in Sekibaku by Shibari Dojo of the Yagami Ryu school with Señor Interior. Bogotá, Colombia.",
+                "2024": "Beginning of training in Seikubaku, biomechanics and neuroscience applied to the discipline",
+                "2025_1": "Certification in Sekibaku by Shibari Dojo with Señor Interior. Bogotá, Colombia.",
                 "2025_2": "Publication of the book \"The Body as Map: Andean cosmovision explaining shibari as a tool for self-knowledge\".",
                 "2026": "Launch of KITSUNE as an integrated platform: Teaching, Production, and Community."
             },
@@ -372,8 +376,8 @@ const translations = {
                 title: "Trajetória",
                 "2022": "Início da formação em Shibari tradicional.",
                 "2023": "Abertura de espaço próprio. Início do ensino de oficinas e aulas regulares.",
-                "2024": "Início da formação em Seikubaku na escola Yagami Ryu.",
-                "2025_1": "Certificação em Sekibaku pelo Shibari Dojo da escola Yagami Ryu com Señor Interior. Bogotá, Colômbia.",
+                "2024": "Início da formação em Seikubaku",
+                "2025_1": "Certificação em Sekibaku pelo Shibari Dojo com Señor Interior. Bogotá, Colômbia.",
                 "2025_2": "Publicação do livro \"O Corpo como Mapa: A cosmovisão andina explicando o shibari como ferramenta de autoconhecimento\".",
                 "2026": "Lançamento da KITSUNE como plataforma integrada: Ensino, Produção e Comunidade."
             },

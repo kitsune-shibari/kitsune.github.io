@@ -101,85 +101,151 @@ if (toggleBtns.length > 0 && agendaLists.length > 0) {
         });
     });
 }
-
-// ==========================================
-// GALERÍA SLIDER + MODAL
-// ==========================================
-
-// Slider individual por cada galería-item
-document.querySelectorAll('.gallery-item').forEach(item => {
-    const slides = item.querySelectorAll('.slide');
-    const prevBtn = item.querySelector('.slider-arrow.prev');
-    const nextBtn = item.querySelector('.slider-arrow.next');
-    const counter = item.querySelector('.slide-counter');
-    
-    if (slides.length === 0 || !prevBtn || !nextBtn) return;
-    
-    let currentSlide = 0;
-    const totalSlides = slides.length;
-    
-    function updateSlider() {
-        slides.forEach((slide, index) => {
-            slide.classList.toggle('active', index === currentSlide);
-        });
-        if (counter) counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
-    }
-    
-    prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateSlider();
-    });
-    
-    nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlider();
-    });
-    
-    // Click en título abre modal
-    const title = item.querySelector('.gallery-item-title');
+document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('galleryModal');
+    const modalImage = modal.querySelector('.modal-image');
+    const modalTitle = modal.querySelector('.modal-title');
+    const modalDesc = modal.querySelector('.modal-desc');
+    const modalCounter = modal.querySelector('.modal-counter');
     
-    if (title && modal) {
-        title.addEventListener('click', () => {
-            const activeSlide = slides[currentSlide];
-            const bgImage = activeSlide ? activeSlide.style.backgroundImage : '';
-            const titleText = title.textContent;
-            const descText = item.querySelector('.gallery-item-desc')?.textContent || '';
-            
-            const modalImage = modal.querySelector('.modal-image');
-            const modalTitle = modal.querySelector('.modal-title');
-            const modalDesc = modal.querySelector('.modal-desc');
-            
-            if (modalImage) modalImage.style.backgroundImage = bgImage;
-            if (modalTitle) modalTitle.textContent = titleText;
-            if (modalDesc) modalDesc.textContent = descText;
-            
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+    let currentModalGallery = null;
+    let currentModalSlide = 0;
+    let modalSlides = [];
+    
+    // Función para abrir el modal
+    function openModal(galleryItem, slideIndex = 0) {
+        const slides = galleryItem.querySelectorAll('.slide');
+        
+        // OBTENER TÍTULO Y DESCRIPCIÓN DEL ARTÍCULO
+        const titleElement = galleryItem.querySelector('.gallery-item-title');
+        const descElement = galleryItem.querySelector('.gallery-item-desc');
+        
+        const titleText = titleElement ? titleElement.textContent : '';
+        const descText = descElement ? descElement.textContent : '';
+        
+        // Guardar referencias
+        currentModalGallery = galleryItem;
+        modalSlides = Array.from(slides);
+        currentModalSlide = slideIndex;
+        
+        // Actualizar modal con los datos del artículo
+        if (modalTitle) modalTitle.textContent = titleText;
+        if (modalDesc) modalDesc.textContent = descText;
+        
+        updateModalContent();
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
-});
-
-// Modal funcionalidad
-const modal = document.getElementById('galleryModal');
-if (modal) {
-    const closeModal = () => {
+    
+    // Función para actualizar la imagen del modal
+    function updateModalContent() {
+        if (modalSlides.length === 0) return;
+        
+        const activeSlide = modalSlides[currentModalSlide];
+        
+        // Manejar imagen o video
+        const video = activeSlide.querySelector('video');
+        if (video) {
+            // Si es video, clonarlo al modal
+            modalImage.innerHTML = '';
+            modalImage.style.backgroundImage = '';
+            const clonedVideo = video.cloneNode(true);
+            clonedVideo.style.position = 'absolute';
+            clonedVideo.style.inset = '0';
+            clonedVideo.style.width = '100%';
+            clonedVideo.style.height = '100%';
+            clonedVideo.style.objectFit = 'contain';
+            modalImage.appendChild(clonedVideo);
+        } else {
+            // Si es imagen
+            modalImage.innerHTML = '';
+            const bgImage = activeSlide.style.backgroundImage;
+            modalImage.style.backgroundImage = bgImage;
+        }
+        
+        if (modalCounter) {
+            modalCounter.textContent = `${currentModalSlide + 1} / ${modalSlides.length}`;
+        }
+    }
+    
+    // Event listeners para cada galería
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        const slider = item.querySelector('.gallery-slider');
+        const title = item.querySelector('.gallery-item-title');
+        const slides = item.querySelectorAll('.slide');
+        
+        // Click en el slider
+        if (slider) {
+            slider.addEventListener('click', function(e) {
+                if (e.target.classList.contains('slider-arrow')) return;
+                
+                let activeIndex = 0;
+                slides.forEach((slide, index) => {
+                    if (slide.classList.contains('active')) {
+                        activeIndex = index;
+                    }
+                });
+                
+                openModal(item, activeIndex);
+            });
+        }
+        
+        // Click en el título
+        if (title) {
+            title.addEventListener('click', function() {
+                let activeIndex = 0;
+                slides.forEach((slide, index) => {
+                    if (slide.classList.contains('active')) {
+                        activeIndex = index;
+                    }
+                });
+                openModal(item, activeIndex);
+            });
+        }
+    });
+    
+    // Navegación del modal
+    modal.querySelector('.modal-nav.prev').addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (modalSlides.length === 0) return;
+        currentModalSlide = (currentModalSlide - 1 + modalSlides.length) % modalSlides.length;
+        updateModalContent();
+    });
+    
+    modal.querySelector('.modal-nav.next').addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (modalSlides.length === 0) return;
+        currentModalSlide = (currentModalSlide + 1) % modalSlides.length;
+        updateModalContent();
+    });
+    
+    // Cerrar modal
+    function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = '';
-    };
-
+        currentModalGallery = null;
+        modalSlides = [];
+        modalImage.innerHTML = ''; // Limpiar video si hay
+    }
+    
     modal.querySelectorAll('[data-close-modal]').forEach(el => {
         el.addEventListener('click', closeModal);
     });
-
+    
+    // Teclado
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
+        if (!modal.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
             closeModal();
+        } else if (e.key === 'ArrowLeft') {
+            modal.querySelector('.modal-nav.prev').click();
+        } else if (e.key === 'ArrowRight') {
+            modal.querySelector('.modal-nav.next').click();
         }
     });
-}
+});
 
 // Hero Carousel
 document.addEventListener('DOMContentLoaded', function() {
