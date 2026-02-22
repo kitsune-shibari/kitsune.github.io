@@ -179,12 +179,16 @@ if (modal) {
             closeModal();
         }
     });
+}
+
 // Hero Carousel
 document.addEventListener('DOMContentLoaded', function() {
-    var slides = document.querySelectorAll('.hero-slide');
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length === 0) return;
+    
     let currentSlide = 0;
-    var totalSlides = slides.length;
-    var intervalTime = 5000; // Cambia cada 5 segundos
+    const totalSlides = slides.length;
+    const intervalTime = 5000; // Cambia cada 5 segundos
     
     function nextSlide() {
         slides[currentSlide].classList.remove('active');
@@ -195,4 +199,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cambio automático
     setInterval(nextSlide, intervalTime);
 });
-}
